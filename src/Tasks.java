@@ -1,12 +1,12 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Tasks {
 
     Scanner scanner = new Scanner(System.in);
 
     public Tasks() {
-        taskFive();
+        taskSix();
     }
 
     public void taskTwo() {
@@ -94,8 +94,28 @@ public class Tasks {
 
     public void taskSix() {
         boolean userWantsMore = true;
-        while (userWantsMore == true) {
-            
+        List<Integer> numbers = new ArrayList<Integer>();
+        while (userWantsMore) {
+            System.out.print("Give me a number: ");
+            numbers.add(scanner.nextInt());
+            System.out.println("Do you want to add more numbers?(Y/N)");
+            String answer = scanner.next();
+            if (answer.equals("N")) {
+                System.out.println("Thanks");
+                userWantsMore = false;
+            }
         }
+
+        Collections.sort(numbers);
+
+        for(int i=0; i<numbers.size();i++ )
+        {
+            System.out.println(numbers.get(i));
+        }
+
+
+
+
+
     }
 }
